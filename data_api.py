@@ -43,6 +43,10 @@ infos_norm_json = json.loads(df_infos_norm.to_json())
 
 app = Flask(__name__)
 
+# page d'acceuil api
+@app.route('/')
+def index():
+    return "P7 - Bienvenue dans l'api score_crédit créé par M. CHOUEIB"
 
 # retourner ids clients 'SK_ID_CURR'
 @app.route('/cust_ids/')
@@ -140,4 +144,4 @@ def shap_clients():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True)
